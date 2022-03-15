@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Caro Game Simple</h3>
+    <p id="game"></p>
+    <button onclick="change()">Người chơi 1</button>
+    <button onclick="change2()">Người chơi 2</button>
+<script>
+    let a = document.getElementById('game');
+    let broad = [];
+    let data = '';
+    for (let i =0;i<5;i++){
+        broad[i] = new Array(0,0,0,0,0);
+    }
+    function change() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y :");
+        data = "";
+        broad[positionX][positionY] = "x";
+        for (let i=0;i<5;i++){
+            data += "<br>";
+            for (let j=0;j<5;j++){
+                data += broad[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        a.innerHTML = "<hr>" +data;
+    }
+    function change2() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y :");
+        data = "";
+        broad[positionX][positionY] = "v";
+        for (let i=0;i<5;i++){
+            data += "<br>";
+            for (let j=0;j<5;j++){
+                data += broad[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        a.innerHTML = "<hr>" +data;
+    }
+</script>
+</body>
+</html>
